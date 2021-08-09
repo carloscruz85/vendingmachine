@@ -11,6 +11,9 @@
 # production
 /build
 
+# insumos
+/insumos
+
 # misc
 .DS_Store
 .env.local

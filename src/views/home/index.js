@@ -58,12 +58,14 @@ const Home = () => {
                     <div className="title">
                         Cruz Machine
                     </div>
+                    <div className="body">
                     <div className="products">
                         
-                    </div>
-                    <div className="screen">
-                        <div className="waiter">
-                            
+                        </div>
+                        <div className="screen">
+                            <div className="waiter">
+                                
+                            </div>
                         </div>
                     </div>
 

@@ -9,19 +9,36 @@
         padding: 1rem;
         border: 0.2rem solid black;
         border-radius: 0.5rem;
-        @include multi(width, 90%, 90%, 40%, 40%);
-        height: auto;
-        display: grid;
-        grid-template-columns: 100% 60% 40%;
+        @include multi(width, 90%, 90%, 40%, 30%);
+        // height: auto;
+        display: flex;
+        flex-flow: column nowrap;
         .title{
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
             background-color: $creme;
             padding: 1rem 0;
             border-radius: 0.5rem;
             border: 0.5rem $red solid;
             color: $red;
-            font-size: 2rem;
-            text-transform: uppercase;
-            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .body{
+            display: flex;
+            flex-flow: row nowrap;
+            .products{
+                width: 60%;
+                height: 50vh;
+                background-color: $creme;
+                padding: 1rem 0;
+                border-radius: 0.5rem;
+                border: 0.5rem $red solid;
+                color: $red;
+            }
+            .screen{
+                width: 40%;
+            }
         }
     }
 }

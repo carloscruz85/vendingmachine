@@ -13,17 +13,23 @@ const Home = () => {
         }
     )
 
+    //wait data
+    const preData = {
+        "id": "-1",
+        "name": "Loading",
+        "preparation_time": 1,
+        "thumbnail": Glass
+    }
+
     //control data
     const [data, setData] = useState(
         [
-            {
-                "id": "-1",
-                "name": "Loading",
-                "preparation_time": 1,
-                "thumbnail": Glass
-            }
+            preData
         ]
     )
+
+    //ask to user
+    const [ask, setAsk] = useState( preData )
 
     //getting data from API https://vending-machine-test.vercel.app/api/products
     useEffect(() => {
@@ -64,7 +70,7 @@ const Home = () => {
                             { data.map( (product,i) => {
                                 // console.log(product);
                                 return(
-                                    <div className="product" key={i}>
+                                    <div className="product" key={product.id}>
                                         <div className="img-container">
                                             <img src={product.thumbnail} alt="img" />                        
                                         </div>
@@ -73,6 +79,19 @@ const Home = () => {
                             } ) }
                         </div>
                         <div className="screen">
+                            <div className="ask">
+                                <div className="panel">
+                                    <div className="img">
+                                        <img src={ask.thumbnail} alt="img" />
+                                    </div>
+                                    <div className="data">
+                                        <b>{ask.name}</b>
+                                    </div>
+                                    {/* <div className="add">
+                                        Agregar
+                                    </div> */}
+                                </div>
+                            </div>
                             <div className="waiter">
                                 
                             </div>

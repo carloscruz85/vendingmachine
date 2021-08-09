@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Modal from '../../components/modal';
 import './index.scss';
+import Glass from '../../assets/img/glass.png'
 
 const Home = () => {
     //control modal
@@ -19,7 +20,7 @@ const Home = () => {
                 "id": "-1",
                 "name": "Loading",
                 "preparation_time": 1,
-                "thumbnail": ""
+                "thumbnail": Glass
             }
         ]
     )
@@ -33,8 +34,8 @@ const Home = () => {
         })
         axios.get('https://vending-machine-test.vercel.app/api/products')
         .then(res => {
-            // console.log(res);
-            setData(res.data)
+            console.log(res);
+            setData(res.data.data)
             //hide modal
             setModal({
                 show: false,
@@ -56,11 +57,20 @@ const Home = () => {
             <div className="machine-container">
                 <div className="machine">
                     <div className="title">
-                        Cruz Machine
+                        Machine
                     </div>
                     <div className="body">
-                    <div className="products">
-                        
+                        <div className="products">
+                            { data.map( (product,i) => {
+                                // console.log(product);
+                                return(
+                                    <div className="product" key={i}>
+                                        <div className="img-container">
+                                            <img src={product.thumbnail} alt="img" />                        
+                                        </div>
+                                    </div>
+                                )
+                            } ) }
                         </div>
                         <div className="screen">
                             <div className="waiter">

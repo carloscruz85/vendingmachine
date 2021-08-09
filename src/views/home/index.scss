@@ -9,7 +9,7 @@
         padding: 1rem;
         border: 0.2rem solid black;
         border-radius: 0.5rem;
-        @include multi(width, 90%, 90%, 40%, 30%);
+        @include multi(width, 90%, 90%, 30%, 25%);
         // height: auto;
         display: flex;
         flex-flow: column nowrap;
@@ -35,6 +35,35 @@
                 border-radius: 0.5rem;
                 border: 0.5rem $red solid;
                 color: $red;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                overflow: scroll;
+                .product{
+                    @include center-center();
+                    cursor: pointer;
+                    transition: transform 0.5s;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                    .img-container{
+                        position: relative;
+                        width: 100%;
+                        padding-top: 100%;
+                        border-radius: 10%;
+                        overflow: hidden;
+                            img{
+                                position: absolute;
+                                top: 0;
+                                left: 15%;
+                                width: 70%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                    }
+              
+           
+                    
+                }
             }
             .screen{
                 width: 40%;

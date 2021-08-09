@@ -4,87 +4,15 @@
 body{
     margin: 0;
     font-size: 16px;
-    // padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: $creme;
+    color: $purple;
+    padding: 0.5rem;
 }
 
 * {
   box-sizing: border-box !important;
-//   border: 1px solid red;
-}
 
-.ultra-header{
-    font-family: museo900;
-    @include multi(font-size, 2rem, 2rem, 3rem, 3rem);
-}
-
-.header{
-    font-family: museo700;
-    @include multi(font-size, 2rem, 2rem, 3rem, 3rem);
-}
-
-.sub-header{
-    font-family: museo300;
-    @include multi(font-size, 1rem, 2rem, 2rem, 2rem);
-    width: 100%;
-}
-
-
-.sub-sub-header{
-    font-family: museo100;
-    @include multi(font-size, 1rem, 1.5rem, 1.5rem, 1.5rem);
-}
-
-div[class*="header"], .button {
-    margin: 0.5rem 0;
-}
-
-.button{
-    background-color: $cyan;
-    color: $blue;
-    text-transform: uppercase;
-    padding: 0.5rem;
-    font-family: museo900;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 1s, background-color 1s;
-    border-radius: 0.8rem;
-    text-decoration: none;
-    &:hover{
-        background-color: $blue;
-        color: $cyan;
-    }
-}
-
-.description{
-    color: $soft-gray;
-    font-family: museo100;
-    font-size: 1rem;
-}
-
-.form-container{
-    background-color: white;
-    @include multi(padding, 4rem 2rem, 3rem 3rem, 1rem 3rem, 3rem 5rem);
-    border-radius: 5rem;
-    box-shadow: 0.5rem 0.5rem 1rem #454545;
-    @include multi(width,100%,80%,50%,50%);
-}
-
-input{
-    width: 100%;
-   @include multi( margin, 0rem 0, 0rem 0, 0rem 0, 1rem 0);
-   @include multi( padding, 0.5rem, 0.4rem, 0.4rem, 0.4rem);
-    border: 1px solid #dedede;
-    box-shadow: 0.5rem 0.5rem 1rem #dedede;
-    font-family: museo100;
-    font-size: 1rem;
-    color: $blue;
-    &:focus{
-        outline: 1px solid #dedede;
-    }
-}
-
-label{
-    @include multi(font-size, 1.5rem, 1.5rem, 2rem, 2rem );
 }
 
 @keyframes appear {

@@ -96,7 +96,7 @@
                             font-size: 1rem;
                             font-weight: bold;
                         }
-                        .add{
+                        .add, .clear{
                             width: 100%;
                             background-color: $red;
                             color: white;
@@ -107,6 +107,9 @@
                             margin: 0.5rem 0;
                             padding: 0.2rem;
                             font-size: 0.8rem;
+                        }
+                        .clear{
+                            background-color: $mint;
                         }
                     }
                 }

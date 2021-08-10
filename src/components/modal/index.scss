@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+.modal-container{
+    background-color: $creme;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    @include center-center();
+    text-transform: uppercase;
+    z-index: 9999;
+    color: $purple;
+    .modal{
+        @include center-center();
+        img{
+            width: 30%;
+            height: auto;
+        }
+    }
+}

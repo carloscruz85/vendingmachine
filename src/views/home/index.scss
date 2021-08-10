@@ -1,7 +1,7 @@
 @import '../../styles/index.scss';
 
 .machine-container{
-    border: 1px solid black;
+    // border: 1px solid black;
     @include center-center();
     height: 80vh;
     .machine{
@@ -25,7 +25,6 @@
             margin-bottom: 1rem;
         }
         .body{
-
             display: grid;
             grid-template-columns: 54% 40%;
             grid-gap: 4%;
@@ -111,7 +110,51 @@
                         }
                     }
                 }
+                .waiter{
+                    margin-top: 1rem;
+                    height: 20vh;
+                    overflow: auto;
+                    // display: flex;
+                    // flex-flow: column-reverse nowrap;
+                    .queue{
+                        color: $creme;
+                        text-align: left;
+                        font-size: 1rem;
+                        margin-bottom: 0.5rem;
+                    }
+                }
             }
         }
+        .ready{
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            border: 0.5rem $red solid;
+            padding: 0.5rem;
+            background-color: $creme;
+            height: 10vh;
+            position: relative;
+            .finish{
+                width: 20%;
+                position: absolute;
+                bottom: 0px;
+                animation: fall 0.2s linear ;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fall {
+    from{
+        bottom: 300px;
+        transform: rotate(360deg);
+    }
+
+    to{
+        bottom: 0;
+        transform: rotate(0deg);
     }
 }

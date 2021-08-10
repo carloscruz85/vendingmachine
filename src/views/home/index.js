@@ -40,7 +40,7 @@ const Home = () => {
         })
         axios.get('https://vending-machine-test.vercel.app/api/products')
         .then(res => {
-            console.log(res);
+            // console.log(res);
             setData(res.data.data)
             //hide modal
             setModal({
@@ -70,7 +70,7 @@ const Home = () => {
                             { data.map( (product,i) => {
                                 // console.log(product);
                                 return(
-                                    <div className="product" key={product.id}>
+                                    <div className="product" key={product.id} onClick={ ()=>{ setAsk(product) } }>
                                         <div className="img-container">
                                             <img src={product.thumbnail} alt="img" />                        
                                         </div>
@@ -87,9 +87,9 @@ const Home = () => {
                                     <div className="data">
                                         <b>{ask.name}</b>
                                     </div>
-                                    {/* <div className="add">
+                                    <div className="add">
                                         Agregar
-                                    </div> */}
+                                    </div>
                                 </div>
                             </div>
                             <div className="waiter">

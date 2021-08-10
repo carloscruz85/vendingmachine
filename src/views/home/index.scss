@@ -25,10 +25,12 @@
             margin-bottom: 1rem;
         }
         .body{
-            display: flex;
-            flex-flow: row nowrap;
+
+            display: grid;
+            grid-template-columns: 54% 40%;
+            grid-gap: 4%;
             .products{
-                width: 60%;
+                // width: 60%;
                 height: 50vh;
                 background-color: $creme;
                 padding: 1rem 0;
@@ -67,35 +69,46 @@
                 }
             }
             .screen{
-                width: 40%;
+                // width: 40%;
                 .ask{
                     .panel{
                         border-radius: 0.5rem;
                         border: 0.5rem $red solid;
-                        padding: 1rem 0;
+                        padding: 0.5rem;
                         background-color: $creme;
                         display: flex;
-                        flex-flow: row nowrap;
+                        flex-flow: column nowrap;
                         .img{
-                            width: 40%;
+                            width: 100%;
+                            padding-top: 40%;
+                            position: relative;
                             img{
+                                position: absolute;
+                                top: 0;
+                                left: 0%;
                                 width: 100%;
-                                height: auto;
+                                height: 100%;
+                                object-fit: cover;
                             }
                         }
                         .data{
-                            width: 60%;
+                            width: 100%;
                             padding: 0.5rem;
+                            font-size: 1rem;
+                            font-weight: bold;
                         }
-                        // .add{
-                        //     background-color: $mint;
-                        //     color: black;
-                        //     border: 0.2rem solid black;
-                        //     border-radius: 0.5rem;
-                        //     cursor: pointer;
-                        //     margin: 0.5rem 0;
-                        //     padding: 0.5rem;
-                        // }
+                        .add{
+                            width: 100%;
+                            background-color: $red;
+                            color: white;
+                            font-weight: bold;
+                            // border: 0.2rem solid black;
+                            border-radius: 0.5rem;
+                            cursor: pointer;
+                            margin: 0.5rem 0;
+                            padding: 0.2rem;
+                            font-size: 0.8rem;
+                        }
                     }
                 }
             }

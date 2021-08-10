@@ -1,0 +1,117 @@
+@import '../../styles/index.scss';
+
+.machine-container{
+    border: 1px solid black;
+    @include center-center();
+    height: 80vh;
+    .machine{
+        background-color: $purple;
+        padding: 1rem;
+        border: 0.2rem solid black;
+        border-radius: 0.5rem;
+        @include multi(width, 90%, 90%, 30%, 25%);
+        // height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        .title{
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: $creme;
+            padding: 1rem 0;
+            border-radius: 0.5rem;
+            border: 0.5rem $red solid;
+            color: $red;
+            margin-bottom: 1rem;
+        }
+        .body{
+
+            display: grid;
+            grid-template-columns: 54% 40%;
+            grid-gap: 4%;
+            .products{
+                // width: 60%;
+                height: 50vh;
+                background-color: $creme;
+                padding: 1rem 0;
+                border-radius: 0.5rem;
+                border: 0.5rem $red solid;
+                color: $red;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                overflow: auto;
+                .product{
+                    @include center-center();
+                    cursor: pointer;
+                    transition: transform 0.2s;
+                    transform: scale(0.8);
+                    &:hover{
+                        transform: scale(1);
+                    }
+                    .img-container{
+                        position: relative;
+                        width: 100%;
+                        padding-top: 100%;
+                        border-radius: 10%;
+                        overflow: hidden;
+                            img{
+                                position: absolute;
+                                top: 0;
+                                left: 0%;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                    }
+              
+           
+                    
+                }
+            }
+            .screen{
+                // width: 40%;
+                .ask{
+                    .panel{
+                        border-radius: 0.5rem;
+                        border: 0.5rem $red solid;
+                        padding: 0.5rem;
+                        background-color: $creme;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        .img{
+                            width: 100%;
+                            padding-top: 40%;
+                            position: relative;
+                            img{
+                                position: absolute;
+                                top: 0;
+                                left: 0%;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .data{
+                            width: 100%;
+                            padding: 0.5rem;
+                            font-size: 1rem;
+                            font-weight: bold;
+                        }
+                        .add{
+                            width: 100%;
+                            background-color: $red;
+                            color: white;
+                            font-weight: bold;
+                            // border: 0.2rem solid black;
+                            border-radius: 0.5rem;
+                            cursor: pointer;
+                            margin: 0.5rem 0;
+                            padding: 0.2rem;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

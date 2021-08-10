@@ -1,0 +1,25 @@
+@import "./vars.scss";
+@import "./functions.scss";
+
+body{
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: $creme;
+    color: $purple;
+    padding: 0.5rem;
+}
+
+* {
+  box-sizing: border-box !important;
+
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }

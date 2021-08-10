@@ -124,7 +124,15 @@ const Home = () => {
                                     }
                                         
                                         }>
-                                        Agregar
+                                        Add
+                                    </div>
+                                    <div className="clear" onClick={ 
+                                        ()=>{
+                                            setQueue( [] )
+                                            localStorage.setItem('vendingmachine', JSON.stringify([]));
+                                        }
+                                     }>
+                                        Reset machine
                                     </div>
                                 </div>
                             </div>

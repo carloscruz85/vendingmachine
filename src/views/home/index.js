@@ -56,6 +56,8 @@ const Home = () => {
                 show: false,
                 msg: ''
             })
+            //set the first ask product
+            setAsk(  res.data.data[0] )
         })
         .catch(error => {
           console.log('Error', error)

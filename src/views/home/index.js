@@ -36,10 +36,15 @@ const Home = () => {
     const [ask, setAsk] = useState( preData )
 
     //dispatch queue
-    const [queue, setQueue] = useState( [preData] )
+    const [queue, setQueue] = useState( [] )
 
     //getting data from API https://vending-machine-test.vercel.app/api/products
     useEffect(() => {
+
+        //get from localstorage if exist
+        let localData  = localStorage.getItem('vendingmachine')
+        if(localData) setQueue(JSON.parse(localData))
+
         let time = new Date(); 
         setCount(time.getTime());
         //display modal
@@ -108,11 +113,17 @@ const Home = () => {
                                     <div className="data">
                                         <small><b>{ask.name}</b> <i>Preparation: {ask.preparation_time} segs</i></small>
                                     </div>
-                                    <div className="add" onClick={ ()=>{ 
+                                    <div className="add" onClick={
+                                        
+                                        ()=>{ 
                                         let newProduct = {...ask} // clone object
                                         let order = new Date();
                                         newProduct.order = order.getTime();
-                                        setQueue( [...queue, newProduct] ) } }>
+                                        setQueue( [...queue, newProduct] )
+                                        localStorage.setItem('vendingmachine', JSON.stringify([...queue, newProduct]));
+                                    }
+                                        
+                                        }>
                                         Agregar
                                     </div>
                                 </div>
@@ -128,9 +139,10 @@ const Home = () => {
                                         q.left = Math.random() * (80 - 0) + 0
                                         q.z = 9900 + count
                                         let name = q.name.split(' ')
+                                        let remainFormat = new Date(remain *1000).toISOString().substr(14, 5)
                                         return(
                                             <div className="queue" key={i}>
-                                                {name[0]} {name[1]}: {remain} left
+                                             {name[0]} {name[1]} {remainFormat} left
                                             </div>
                                         )
                                     } )
